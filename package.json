@@ -1,0 +1,9 @@
+{
+  "name": "movie-crud-app",
+  "version": "0.0.1",
+  "description": "A simple crud application using NodeJS backed by Mongo",
+  "dependencies": {
+    "mongodb":"2.2.5",
+    "express":"4.14.0"
+  }
+}
