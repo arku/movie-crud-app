@@ -5,6 +5,7 @@
   "dependencies": {
     "mongodb":"2.2.5",
     "express":"4.14.0",
-    "node-range":"0.1.0"
+    "node-range":"0.1.0",
+    "body-parser":"1.15.2"
   }
 }
