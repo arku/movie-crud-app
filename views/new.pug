@@ -1,0 +1,16 @@
+h1 Create new movie
+#form
+  form(action="/create", method="POST")
+    #field
+      input(type="text", placeholder="Movie name", name="movie_name", required)
+    br
+    #field
+      select(name="year")
+        each year in years
+          option(value= year)= year
+    br
+    #field
+      input(type="text", placeholder="IMDB", name="imdb", required)
+    br
+    #field
+    input(type="submit", value="Create movie") 

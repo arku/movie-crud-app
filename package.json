@@ -4,6 +4,7 @@
   "description": "A simple crud application using NodeJS backed by Mongo",
   "dependencies": {
     "mongodb":"2.2.5",
-    "express":"4.14.0"
+    "express":"4.14.0",
+    "node-range":"0.1.0"
   }
 }
