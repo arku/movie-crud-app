@@ -18,7 +18,14 @@ mongoClient.connect(URI, function(err, db){
 
   // Request handlers
   app.get('/', function(req, res){
-    res.render('index');
+
+    db.collection('movies').find({}).toArray(function(err, docs){
+      if(err)
+        res.send('Something went wrong');
+      else
+        res.render('index', { movies: docs });
+    });
+
   });
 
   app.get('/new', function(req, res){
@@ -35,11 +42,15 @@ mongoClient.connect(URI, function(err, db){
   app.post('/create', function(req, res){
 
     // console.log(req.body);
-    db.collection('movies').insert(req.body, function(err, result){
+    var title = req.body.movie_name,
+        year  = req.body.year,
+        imdbId = req.body.imdb;
+
+    db.collection('movies').insert({ title: title, year: year, imdb_id: imdbId }, function(err, result) {
       if(err)
         res.send("Couldn't create");
       else
-        res.send('Movie created');
+        res.redirect('/');
     })
   });
 

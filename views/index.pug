@@ -1,2 +1,9 @@
-h1 Hello
-a(href="/new") New movie
+h1 All Movies
+#movies
+  each movie in movies
+    .movie
+      p #{movie.title}, #{movie.year}
+      a(href= "http://www.imdb.com/title/" + movie.imdb_id) Know more
+
+p
+  a(href="/new") New movie
